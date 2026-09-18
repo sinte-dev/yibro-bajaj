@@ -42,37 +42,59 @@ button,input,select,textarea{font-family:inherit;}
 /* ---------- header ---------- */
 .topbar{
   display:flex; justify-content:space-between; align-items:center;
-  gap:16px; padding:18px 0; flex-wrap:wrap;
+  gap:16px; padding:16px 0; flex-wrap:wrap;
+  border-bottom:1px solid var(--border);
+  position:sticky; top:0; z-index:20;
+  background:var(--bg);
+  margin:0 -20px; padding-left:20px; padding-right:20px;
+  box-shadow:0 2px 10px rgba(0,0,0,.05);
 }
-.brand{display:flex; align-items:baseline; gap:10px;}
+.brand{display:flex; align-items:center; gap:12px;}
+.brand-badge{
+  flex-shrink:0; width:42px; height:42px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-head); font-weight:900; font-size:.92rem; letter-spacing:.01em;
+  color:var(--surface); background:var(--ink);
+  border:2px solid var(--amber);
+  box-shadow:0 0 0 3px var(--bg);
+}
+.brand-text{display:flex; flex-direction:column; gap:2px;}
 .brand-mark{
   font-family:var(--font-head); font-weight:900; font-size:1.5rem;
-  letter-spacing:-0.01em;
+  letter-spacing:-0.01em; line-height:1.1;
 }
 .brand-mark .accent{color:var(--rust);}
 .brand-loc{color:var(--ink-soft); font-size:.85rem;}
 .topbar-right{display:flex; align-items:center; gap:12px; flex-wrap:wrap;}
-.lang-switch{display:inline-flex; border:1.5px solid var(--border-strong); border-radius:3px; overflow:hidden;}
-.lang-btn{
-  background:var(--surface); color:var(--ink-soft); border:none; cursor:pointer;
-  font-family:inherit; font-weight:700; font-size:.78rem; padding:8px 12px;
+.lang-switch{
+  display:inline-flex; padding:3px; gap:2px;
+  border:1.5px solid var(--border-strong); border-radius:999px; background:var(--surface-2);
 }
-.lang-btn + .lang-btn{border-left:1.5px solid var(--border-strong);}
+.lang-btn{
+  background:transparent; color:var(--ink-soft); border:none; cursor:pointer;
+  font-family:inherit; font-weight:700; font-size:.78rem; padding:7px 13px;
+  border-radius:999px; transition:background .12s ease, color .12s ease;
+}
 .lang-btn.active{background:var(--amber); color:#1a1408;}
 .contact-row{display:flex; gap:8px; flex-wrap:wrap;}
 .contact-btn{
-  display:inline-flex; align-items:center; gap:7px;
-  padding:9px 14px; border:1.5px solid var(--border-strong);
-  border-radius:3px; text-decoration:none; font-weight:600; font-size:.85rem;
-  color:var(--ink); background:var(--surface); transition:transform .12s ease, background .12s ease;
+  display:inline-flex; align-items:center; gap:8px;
+  padding:6px 15px 6px 6px; border:none;
+  border-radius:999px; text-decoration:none; font-weight:700; font-size:.85rem;
+  color:var(--ink); background:var(--surface);
+  box-shadow:inset 0 0 0 1.5px var(--border-strong), 0 1px 2px rgba(0,0,0,.06);
+  transition:transform .12s ease, box-shadow .12s ease;
 }
-.contact-btn:hover{transform:translateY(-1px); background:var(--surface-2);}
-.contact-btn.call{border-color:var(--good); color:var(--good);}
-.contact-btn.call:hover{background:rgba(76,107,79,.12);}
-.contact-btn.whatsapp{border-color:#3f8b53; color:#3f8b53;}
-.contact-btn.whatsapp:hover{background:rgba(63,139,83,.12);}
-.contact-btn.telegram{border-color:#2E86AB; color:#2E86AB;}
-.contact-btn.telegram:hover{background:rgba(46,134,171,.12);}
+.contact-btn svg{
+  width:26px; height:26px; padding:6px; border-radius:50%; box-sizing:border-box; flex-shrink:0;
+}
+.contact-btn:hover{transform:translateY(-1px); box-shadow:inset 0 0 0 1.5px var(--border-strong), 0 4px 10px rgba(0,0,0,.1);}
+.contact-btn.call{color:var(--good);}
+.contact-btn.call svg{background:rgba(76,107,79,.15);}
+.contact-btn.whatsapp{color:#3f8b53;}
+.contact-btn.whatsapp svg{background:rgba(63,139,83,.15);}
+.contact-btn.telegram{color:#2E86AB;}
+.contact-btn.telegram svg{background:rgba(46,134,171,.15);}
 
 /* ---------- road-line divider ---------- */
 .road-divider{
@@ -90,11 +112,16 @@ button,input,select,textarea{font-family:inherit;}
   padding:34px 0 42px;
   align-items:end;
 }
+.hero-copy{display:flex; flex-direction:column;}
+.hero-mark{
+  width:48px; height:5px; border-radius:3px; margin-bottom:16px;
+  background:linear-gradient(90deg, var(--amber), var(--rust));
+}
 .hero h1{
   font-family:var(--font-head); font-weight:900; font-size:clamp(2.1rem,4.6vw,3.4rem);
   line-height:1.03; margin:0 0 14px; max-width:14ch;
 }
-.hero p{color:var(--ink-soft); max-width:46ch; margin:0; font-size:1.02rem;}
+.hero p{color:var(--ink-soft); max-width:46ch; margin:0; font-size:1.05rem; line-height:1.6;}
 .spec-plate{
   position:relative; border-radius:6px; padding:20px 24px 18px;
   background:
