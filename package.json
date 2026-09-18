@@ -1,0 +1,22 @@
+{
+  "name": "yibro-bajaj-site",
+  "version": "1.0.0",
+  "description": "Yibro Bajaj motorcycle & Bajaj sales site \u2014 public browsing plus a password-protected admin panel, backed by a small Node/Express server.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch dev.js",
+    "test": "node test/run.js"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "multer": "^2.0.0"
+  },
+  "devDependencies": {
+    "livereload": "^0.10.3",
+    "jsdom": "^24.0.0"
+  }
+}
