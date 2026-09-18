@@ -257,7 +257,8 @@
     var s = STATE.settings || {};
     return (
       '<div class="hero">' +
-        '<div>' +
+        '<div class="hero-copy">' +
+          '<span class="hero-mark" aria-hidden="true"></span>' +
           '<h1>' + escapeHtml(s.tagline || '') + '</h1>' +
           '<p>' + escapeHtml(fmt(t('hero_sub'), { business: s.businessName || '', location: s.location || '' })) + '</p>' +
         '</div>' +
@@ -274,7 +275,10 @@
     var s = STATE.settings || {};
     return (
       '<div class="topbar">' +
-        '<div class="brand"><div class="brand-mark">Yibro<span class="accent"> Bajaj</span></div><div class="brand-loc">' + escapeHtml(s.location || '') + '</div></div>' +
+        '<div class="brand">' +
+          '<div class="brand-badge" aria-hidden="true">YB</div>' +
+          '<div class="brand-text"><div class="brand-mark">Yibro<span class="accent"> Bajaj</span></div><div class="brand-loc">' + escapeHtml(s.location || '') + '</div></div>' +
+        '</div>' +
         '<div class="topbar-right">' +
           '<div class="lang-switch" role="group" aria-label="Language">' +
             '<button type="button" class="lang-btn' + (lang === 'en' ? ' active' : '') + '" data-lang="en">EN</button>' +
